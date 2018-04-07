@@ -15,7 +15,7 @@ class CreateVisitTable extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('url')->nullable();
+            $table->text('url')->nullable();
             $table->string('ip');
             $table->integer('parent')->default(0);
             $table->text('extend')->nullable();
