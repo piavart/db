@@ -15,9 +15,9 @@ class VisitController extends Controller
 {
 
     public function webhook(){
-        $visit = Visit::find(1);
+        //$visit = Visit::find(1);
         $data = $_POST;
-        //$visit = new Visit();
+        $visit = new Visit();
         $visit->ip = '12345';//;
         $visit->extend = $data;
         $visit->url = '1234';
