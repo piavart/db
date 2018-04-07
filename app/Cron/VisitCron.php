@@ -22,9 +22,12 @@ class VisitCron extends Command
         $visits = Visit::all();
         foreach ($visits as $visit){
 
-                $visit->ip = $visit->extend['REMOTE_ADDR'];
-                $visit->url = $visit->extend['HTTP_HOST'].$visit->extend['REQUEST_URI'];
-                $visit->save();
+            $data = $visit->extend;
+            $visit->ip = $visit->extend['REMOTE_ADDR'];
+            $visit->url = $visit->extend['HTTP_HOST'].$visit->extend['REQUEST_URI'];
+            $visit->http_referer = $data['HTTP_REFERER'];
+            $visit->user_agent = $data['HTTP_USER_AGENT'];
+            $visit->save();
 
         }
     }

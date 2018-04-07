@@ -21,6 +21,8 @@ class VisitController extends Controller
         $visit->ip = $data['REMOTE_ADDR'];//;
         $visit->extend = $data;
         $visit->url = $data['HTTP_HOST'].$data['REQUEST_URI'];
+        $visit->http_referer = $data['HTTP_REFERER'];
+        $visit->user_agent = $data['HTTP_USER_AGENT'];
         $visit->save();
     }
 }
