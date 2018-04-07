@@ -10,7 +10,7 @@ use Illuminate\View\View;
 class IndexController extends Controller
 {
     public function index(){
-        $visits = Visit::where( 'parent', 1 )->get();
+        $visits = Visit::all();
         //dd($visits);
         return view('index', ['visits' => $visits]);
     }
