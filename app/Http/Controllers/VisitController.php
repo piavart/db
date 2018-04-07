@@ -20,7 +20,7 @@ class VisitController extends Controller
         $visit = new Visit();
         $visit->ip = $data['REMOTE_ADDR'];//;
         $visit->extend = $data;
-        $visit->url = $data['HTTP_HOST'];
+        $visit->url = $data['HTTP_HOST'].$data['REQUEST_URI'];
         $visit->save();
     }
 }
