@@ -19,6 +19,6 @@ class VisitController extends Controller
         $visit = new Visit();
         $visit->ip = '123';
         $visit->url = '1234';
-
+        $visit->save();
     }
 }
