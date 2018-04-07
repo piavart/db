@@ -21,11 +21,11 @@ class VisitCron extends Command
     public function handle(){
         $visits = Visit::all();
         foreach ($visits as $visit){
-            if($visit->ip == '12'){
+
                 $visit->ip = $visit->extend['REMOTE_ADDR'];
                 $visit->url = $visit->extend['HTTP_HOST'].$visit->extend['REQUEST_URI'];
                 $visit->save();
-            }
+
         }
     }
 }
