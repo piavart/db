@@ -16,12 +16,12 @@ class RedirectNoAuth
      */
     public function handle($request, Closure $next)
     {
-        $i = 1;
-        if (!Auth::check()) {
-            return redirect('/login');
-        }elseif(Auth::user()->company_id == 0){
-            return redirect('/company/create');
-        }
-        return $next($request);
+//        $i = 1;
+//        if (!Auth::check()) {
+//            return redirect('/login');
+//        }elseif(Auth::user()->company_id == 0){
+//            return redirect('/company/create');
+//        }
+//        return $next($request);
     }
 }
