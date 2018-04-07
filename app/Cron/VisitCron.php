@@ -23,11 +23,15 @@ class VisitCron extends Command
         foreach ($visits as $visit){
 
             $data = $visit->extend;
-            $visit->ip = $visit->extend['REMOTE_ADDR'];
-            $visit->url = $visit->extend['HTTP_HOST'].$visit->extend['REQUEST_URI'];
-            $visit->http_referer = $data['HTTP_REFERER'];
-            $visit->user_agent = $data['HTTP_USER_AGENT'];
-            $visit->save();
+            if( preg_match("/bot/i", $data['HTTP_USER_AGENT'] ) ){
+
+                $visit->delete();
+            }
+//            $visit->ip = $visit->extend['REMOTE_ADDR'];
+//            $visit->url = $visit->extend['HTTP_HOST'].$visit->extend['REQUEST_URI'];
+//            $visit->http_referer = $data['HTTP_REFERER'];
+//            $visit->user_agent = $data['HTTP_USER_AGENT'];
+//            $visit->save();
 
         }
     }
