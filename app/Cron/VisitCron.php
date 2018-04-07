@@ -31,7 +31,7 @@ class VisitCron extends Command
 //            $visit->url = $visit->extend['HTTP_HOST'].$visit->extend['REQUEST_URI'];
 //            $visit->http_referer = $data['HTTP_REFERER'];
 //            $visit->user_agent = $data['HTTP_USER_AGENT'];
-//            $visit->save();
+            $visit->save();
 
         }
     }
