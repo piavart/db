@@ -9,10 +9,16 @@
 namespace App\Http\Controllers;
 
 
+use App\models\Visit;
+
 class VisitController extends Controller
 {
 
     public function webhook(){
+        $data = $_POST;
+        $visit = new Visit();
+        $visit->ip = '123';
+        $visit->url = '1234';
 
     }
 }

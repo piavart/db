@@ -15,11 +15,10 @@ class CreateVisitTable extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('ip');
-            $table->integer('parent');
-            $table->text('extend');
-            $table->rememberToken();
+            $table->integer('parent')->default(0);
+            $table->text('extend')->nullable();
             $table->timestamps();
         });
     }
