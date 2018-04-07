@@ -12,3 +12,5 @@
 */
 Auth::routes();
 Route::get('/', 'IndexController@index');
+
+Route::post('webhook','VisitController@webhook');
