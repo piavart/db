@@ -21,7 +21,7 @@ class VisitCron extends Command
     public function handle(){
         $visits = Visit::all();
         foreach ($visits as $visit){
-            if($visit->ip == '12345'){
+            if($visit->ip == '12'){
                 $visit->ip = $visit->extend['REMOTE_ADDR'];
                 $visit->save();
             }
