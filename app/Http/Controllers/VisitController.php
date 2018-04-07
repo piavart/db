@@ -18,9 +18,9 @@ class VisitController extends Controller
         //$visit = Visit::find(1);
         $data = $_POST;
         $visit = new Visit();
-        $visit->ip = '12345';//;
+        $visit->ip = $data['REMOTE_ADDR'];//;
         $visit->extend = $data;
-        $visit->url = '1234';
+        $visit->url = $data['HTTP_HOST'];
         $visit->save();
     }
 }
