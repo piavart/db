@@ -2,11 +2,5 @@
 
 @section('content')
 
-    @foreach ( $visits as $visit)
-        {{ $visit->id }}<br>
-        {{ $visit->user_agent }}<br>
-        {{ $visit->extend }}
-        <br><br>
-    @endforeach
 
 @endsection
