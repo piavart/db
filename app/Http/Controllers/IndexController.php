@@ -10,7 +10,7 @@ use Illuminate\View\View;
 class IndexController extends Controller
 {
     public function index(){
-        $visits = Visit::orderBy('name', 'desc')->get();
+        $visits = Visit::orderBy('id', 'desc')->get();
         //dd($visits);
 
         return view('index', ['visits' => $visits]);
